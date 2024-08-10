@@ -69,9 +69,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Contact
 
-Your Name - [your-email@example.com](mailto:your-email@example.com)
+Your Name - [your-email@example.com](mailto:dev@crosstalk.me)
 
-Project Link: [https://github.com/yourusername/tailwind-ui-collection](https://github.com/yourusername/tailwind-ui-collection)
+Project Link: [https://tomoyanzai.github.io/Tailwind-UI-Vault/](https://tomoyanzai.github.io/Tailwind-UI-Vault/)
 
 ## Acknowledgments
 
