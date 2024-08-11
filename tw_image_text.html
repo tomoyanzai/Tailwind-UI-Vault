@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Websites - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      :root {
+        --image-width: 600px;
+        --image-height: 400px;
+      }
+      @layer utilities {
+        .bg-gradient-overlay {
+          background: linear-gradient(
+            to bottom,
+            rgba(30, 58, 138, 0.5),
+            rgba(30, 58, 138, 0.2)
+          );
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="md:container md:mx-auto md:px-4 md:py-12">
+      <div class="flex flex-col md:flex-row md:items-start md:space-x-12">
+        <div class="w-full md:w-auto mb-8 md:mb-0">
+          <div
+            class="relative w-[var(--image-width)] h-[var(--image-height)] max-w-full mx-auto"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-overlay md:rounded-3xl"
+            ></div>
+            <img
+              src="https://lipsum.app/id/24/1600x900"
+              alt="Smartphone displaying Internet Computer app"
+              class="w-full h-full object-cover md:rounded-3xl shadow-lg"
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 px-4 md:px-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Websites</h1>
+
+          <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+            A website is the most important channel to showcase your brand to
+            customers. Our portfolio features award-winning websites designed to
+            give users the best experience possible while also meeting business
+            goals.
+          </p>
+
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <span class="w-6 h-0.5 bg-gray-400 mr-4"></span>
+              <span class="text-lg md:text-xl text-gray-800"
+                >Content Strategy</span
+              >
+            </li>
+            <li class="flex items-center">
+              <span class="w-6 h-0.5 bg-gray-400 mr-4"></span>
+              <span class="text-lg md:text-xl text-gray-800">Web Design</span>
+            </li>
+            <li class="flex items-center">
+              <span class="w-6 h-0.5 bg-gray-400 mr-4"></span>
+              <span class="text-lg md:text-xl text-gray-800"
+                >Interactive Experiences</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
