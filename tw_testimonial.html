@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile-Optimized Testimonial Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12">
+        <span class="text-gray-800">Partnering with</span
+        ><br class="sm:hidden" />
+
+        <span class="text-blue-600">innovative brands.</span>
+      </h1>
+
+      <div class="grid grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-16">
+        <img
+          src="https://cdn.brandfetch.io/apple.com/w/800/h/978/theme/dark/logo"
+          alt="Apple"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+        <img
+          src="https://cdn.brandfetch.io/shopify.com/w/820/h/234/theme/dark/logo"
+          alt="Shopify"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+        <img
+          src="https://cdn.brandfetch.io/nike.com/w/800/h/278/theme/dark/logo"
+          alt="Nike"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+        <img
+          src="https://cdn.brandfetch.io/reddit.com/w/800/h/226/logo"
+          alt="Reddit"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+        <img
+          src="https://cdn.brandfetch.io/slack.com/w/820/h/335/logo"
+          alt="Slack"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+        <img
+          src="https://cdn.brandfetch.io/figma.com/w/820/h/297/logo"
+          alt="Figma"
+          class="h-8 sm:h-10 md:h-12 w-auto object-contain mx-auto"
+        />
+      </div>
+
+      <div
+        class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-500"
+        ></div>
+        <img
+          src="/api/placeholder/100/30"
+          alt="Company Logo"
+          class="h-8 sm:h-10 mb-4 sm:mb-6"
+        />
+        <p
+          id="testimonial"
+          class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-4 sm:mb-6 italic"
+        ></p>
+        <p id="author" class="font-semibold text-gray-900"></p>
+      </div>
+
+      <div class="flex justify-between items-center mt-6 sm:mt-8">
+        <span id="currentSlide" class="text-gray-500 text-sm"></span>
+        <div>
+          <button
+            id="prevBtn"
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-3 sm:px-4 rounded-l transition-colors duration-200"
+          >
+            &larr;
+          </button>
+          <button
+            id="nextBtn"
+            class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-3 sm:px-4 rounded-r transition-colors duration-200"
+          >
+            &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const testimonials = [
+        {
+          text: "Their team was instrumental in launching our new product line. Their guidance and design direction were invaluable.",
+          author: "Jane Doe, CEO",
+        },
+        {
+          text: "Working with this agency transformed our brand presence. Their creativity and professionalism are unmatched.",
+          author: "John Smith, Marketing Director",
+        },
+        {
+          text: "The results speak for themselves. Our digital engagement has skyrocketed thanks to their innovative strategies.",
+          author: "Emily Brown, Brand Manager",
+        },
+      ];
+
+      let currentIndex = 0;
+
+      function updateTestimonial() {
+        const testimonialElement = document.getElementById("testimonial");
+        const authorElement = document.getElementById("author");
+
+        testimonialElement.style.opacity = "0";
+        authorElement.style.opacity = "0";
+
+        setTimeout(() => {
+          testimonialElement.textContent = testimonials[currentIndex].text;
+          authorElement.textContent = testimonials[currentIndex].author;
+          document.getElementById("currentSlide").textContent = `0${
+            currentIndex + 1
+          } / 0${testimonials.length}`;
+
+          testimonialElement.style.opacity = "1";
+          authorElement.style.opacity = "1";
+        }, 300);
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial();
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        updateTestimonial();
+      });
+
+      updateTestimonial();
+    </script>
+  </body>
+</html>
