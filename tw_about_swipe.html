@@ -55,8 +55,8 @@
             />
           </svg>
         </a>
-        <div class="mt-16 max-w-8xl mx-auto">
-          <div class="swiper-container">
+        <div class="mt-16 max-w-full mx-auto overflow-hidden">
+          <div class="swiper-container h-48 sm:h-64 md:h-80 lg:h-96">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -80,14 +80,35 @@
                 />
               </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <!-- Comment on if you need swip controller -->
-            <!-- <div class="swiper-button-next"></div> -->
-            <!-- <div class="swiper-button-prev"></div> -->
           </div>
+          <div class="swiper-pagination mt-4"></div>
         </div>
       </div>
     </section>
+
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-pagination {
+        position: static;
+        margin-top: 1rem;
+      }
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #333;
+      }
+    </style>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
@@ -95,20 +116,23 @@
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
         },
         breakpoints: {
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1.5,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2.5,
           },
         },
       });
