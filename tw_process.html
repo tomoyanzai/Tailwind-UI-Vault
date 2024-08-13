@@ -3,53 +3,195 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ryde - Brand Needs</title>
+    <title>Impactful Typography Design</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
-
-      body {
-        font-family: "Inter", sans-serif;
-      }
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
     </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "custom-blue": "#3B82F6",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body class="bg-white text-gray-800">
-    <header class="p-6">
-      <nav class="flex justify-between items-center">
-        <div class="text-2xl font-bold">rnoi</div>
-        <ul class="flex space-x-6">
-          <li><a href="#" class="hover:underline">WORK</a></li>
-          <li><a href="#" class="hover:underline">ABOUT</a></li>
-          <li><a href="#" class="hover:underline">CAPABILITIES</a></li>
-          <li><a href="#" class="hover:underline">REVOLVE</a></li>
-          <li><a href="#" class="hover:underline">RETRN</a></li>
-          <li><a href="#" class="hover:underline">RYDE</a></li>
-        </ul>
-        <button
-          class="border border-black px-4 py-2 hover:bg-black hover:text-white transition"
-        >
-          CONTACT
-          <span class="ml-2">→</span>
-        </button>
-      </nav>
-    </header>
+  <body class="bg-white text-black font-sans">
+    <main class="container mx-auto px-4 py-12 flex justify-center">
+      <div class="max-w-3xl w-full">
+        <h1 class="text-2xl font-semibold mb-12">
+          Impactful Typography Design
+        </h1>
 
-    <main class="container mx-auto px-6 mt-20">
-      <h1 class="text-8xl font-light leading-tight">
-        <span class="text-gray-300">brand needs to</span><br />
-        <span class="font-bold">Ryde</span>
-        <span class="text-gray-300">all the</span><br />
-        <span class="text-gray-300">right waves</span><br />
-        <span class="text-gray-300">ahead.</span>
-      </h1>
+        <div class="space-y-20">
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                01
+              </div>
+              <h2 class="text-4xl font-bold">Typography</h2>
+            </div>
+            <div class="space-x-4 mb-4">
+              <span
+                class="font-semibold cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'typography')"
+                >Font Selection</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'typography')"
+                >Hierarchy</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'typography')"
+                >Spacing</span
+              >
+            </div>
+            <p id="typographyContent">
+              Our typography service focuses on selecting the perfect fonts to
+              convey your brand's personality. We carefully choose typefaces
+              that are not only visually appealing but also enhance readability
+              across various devices and screen sizes.
+            </p>
+          </section>
+
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                02
+              </div>
+              <h2 class="text-4xl font-bold">Color Theory</h2>
+            </div>
+            <div class="space-x-4 mb-4">
+              <span
+                class="font-semibold cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'color')"
+                >Palette Creation</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'color')"
+                >Contrast</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'color')"
+                >Accessibility</span
+              >
+            </div>
+            <p id="colorContent">
+              Our color theory expertise ensures that your design not only looks
+              stunning but also communicates effectively. We create harmonious
+              color palettes that reinforce your brand identity and evoke the
+              right emotions in your audience.
+            </p>
+          </section>
+
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                03
+              </div>
+              <h2 class="text-4xl font-bold">Layout Design</h2>
+            </div>
+            <div class="space-x-4 mb-4">
+              <span
+                class="font-semibold cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'layout')"
+                >Grid Systems</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'layout')"
+                >Responsive Design</span
+              >
+              <span
+                class="text-gray-400 cursor-pointer hover:text-custom-blue"
+                onclick="changeContent(this, 'layout')"
+                >White Space</span
+              >
+            </div>
+            <p id="layoutContent">
+              Our layout design service utilizes powerful grid systems to create
+              balanced and visually appealing compositions. We ensure that your
+              content is organized logically, guiding the user's eye and
+              improving overall readability and engagement.
+            </p>
+          </section>
+        </div>
+      </div>
     </main>
 
-    <footer class="fixed bottom-0 left-0 right-0 p-6">
-      <div class="flex justify-between items-center">
-        <img src="/api/placeholder/100/50" alt="Nike logo" class="h-8" />
-        <img src="/api/placeholder/100/50" alt="LVMH logo" class="h-8" />
-        <img src="/api/placeholder/100/50" alt="Coca-Cola logo" class="h-8" />
-      </div>
-    </footer>
+    <div class="fixed bottom-8 right-8">
+      <button
+        id="startProjectBtn"
+        class="bg-black text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition"
+      >
+        Start Your Project
+      </button>
+    </div>
+
+    <script>
+      document
+        .getElementById("startProjectBtn")
+        .addEventListener("click", function () {
+          // Go back to the index page
+          window.location.href = "index.html";
+        });
+
+      function changeContent(element, section) {
+        const contents = {
+          typography: {
+            "Font Selection":
+              "Our font selection process involves carefully choosing typefaces that align with your brand identity and enhance readability. We consider factors like serif vs sans-serif, font weight, and how fonts pair together to create a cohesive design.",
+            Hierarchy:
+              "We establish a clear typographic hierarchy to guide users through your content. By varying font sizes, weights, and styles, we create a visual roadmap that helps users quickly understand the importance and relationship of different text elements.",
+            Spacing:
+              "Proper spacing is crucial for readability and visual appeal. We meticulously adjust line heights, letter spacing, and paragraph margins to ensure your text is easy to read and visually pleasing across all devices.",
+          },
+          color: {
+            "Palette Creation":
+              "We develop unique color palettes that reflect your brand's personality and appeal to your target audience. Our palettes are designed to be versatile, working harmoniously across various design elements and marketing materials.",
+            Contrast:
+              "We use color contrast strategically to highlight important information and improve readability. High contrast between text and background colors ensures that your content is easily legible, even for users with visual impairments.",
+            Accessibility:
+              "Our color choices always take accessibility into account. We ensure that color combinations meet WCAG guidelines for contrast ratios, making your design inclusive and usable for all audience members.",
+          },
+          layout: {
+            "Grid Systems":
+              "We implement flexible grid systems that provide structure to your design while allowing for creative freedom. Our grids ensure consistency across your website and adapt seamlessly to different screen sizes.",
+            "Responsive Design":
+              "Our layouts are built to be fully responsive, providing an optimal viewing experience across a wide range of devices. From desktop to mobile, your design will look great and function flawlessly.",
+            "White Space":
+              "We strategically use white space (also known as negative space) to create a clean, uncluttered design. Proper use of white space improves readability, highlights key elements, and gives your content room to breathe.",
+          },
+        };
+
+        const contentElement = document.getElementById(`${section}Content`);
+        contentElement.textContent = contents[section][element.textContent];
+
+        // Update classes for clicked element and its siblings
+        element.parentNode.querySelectorAll("span").forEach((span) => {
+          span.classList.remove("font-semibold");
+          span.classList.add("text-gray-400");
+        });
+        element.classList.remove("text-gray-400");
+        element.classList.add("font-semibold");
+      }
+    </script>
   </body>
 </html>

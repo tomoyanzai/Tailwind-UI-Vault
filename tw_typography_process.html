@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse - Creative Design Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              fadeInUp: "fadeInUp 0.8s ease-out forwards",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .hover-underline {
+        position: relative;
+      }
+
+      .hover-underline::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .hover-underline:hover::after {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 flex flex-col min-h-screen">
+    <header class="p-6">
+      <nav class="flex justify-between items-center">
+        <div class="text-2xl font-bold">pulse</div>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover-underline">PROJECTS</a></li>
+          <li><a href="#" class="hover-underline">SERVICES</a></li>
+          <li><a href="#" class="hover-underline">APPROACH</a></li>
+          <li><a href="#" class="hover-underline">TEAM</a></li>
+          <li><a href="#" class="hover-underline">INSIGHTS</a></li>
+        </ul>
+        <button
+          class="border border-black px-4 py-2 hover:bg-black hover:text-white transition duration-300"
+        >
+          LET'S TALK
+          <span class="ml-2">→</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-6 flex-grow flex flex-col md:flex-row">
+      <div class="w-full md:w-1/2 pr-0 md:pr-8">
+        <h1 class="text-5xl md:text-7xl font-light leading-tight mt-20">
+          <span
+            class="text-gray-300 block opacity-0 animate-fadeInUp"
+            style="animation-delay: 0.2s"
+            >transforming ideas</span
+          >
+          <span
+            class="font-bold opacity-0 animate-fadeInUp"
+            style="animation-delay: 0.4s"
+            >into digital</span
+          >
+          <span
+            class="text-gray-300 block opacity-0 animate-fadeInUp"
+            style="animation-delay: 0.6s"
+            >experiences that</span
+          >
+          <span
+            class="text-gray-300 block opacity-0 animate-fadeInUp"
+            style="animation-delay: 0.8s"
+            >inspire action.</span
+          >
+        </h1>
+      </div>
+      <div class="w-full md:w-1/2 pl-0 md:pl-8 mt-12 md:mt-20">
+        <div class="space-y-12 md:space-y-20">
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                01
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Discovery</h2>
+            </div>
+            <p class="text-gray-600">
+              We dive deep into your brand, audience, and goals to lay the
+              foundation for success.
+            </p>
+          </section>
+
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                02
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Strategy</h2>
+            </div>
+            <p class="text-gray-600">
+              Our team crafts a tailored approach to meet your unique challenges
+              and opportunities.
+            </p>
+          </section>
+
+          <section>
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold mr-4"
+              >
+                03
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold">Creation</h2>
+            </div>
+            <p class="text-gray-600">
+              We bring ideas to life through innovative design and cutting-edge
+              technology.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-20">
+      <div class="container mx-auto px-6 py-8 border-t border-gray-200">
+        <div class="flex justify-between items-center text-sm text-gray-500">
+          <p>&copy; 2024 Pulse Creative Agency. All rights reserved.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-700">Privacy Policy</a>
+            <a href="#" class="hover:text-gray-700">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

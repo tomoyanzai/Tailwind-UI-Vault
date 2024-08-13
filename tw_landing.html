@@ -3,58 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARISE Landing Page</title>
+    <title>Design and Localization Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FACC15", // Yellow-400
+              secondary: "#1F2937", // Gray-800
+              background: "#00002B", // Deep blue background
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body class="bg-gray-900 text-white">
-    <div class="relative h-screen w-full overflow-hidden">
-      <!-- Background Image -->
+  <body class="bg-background text-white">
+    <!-- Header -->
+    <header
+      class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8"
+    >
+      <div class="text-2xl font-bold">M</div>
+      <button
+        class="bg-primary text-secondary px-4 py-2 rounded-full text-sm hover:bg-opacity-80 transition-colors"
+      >
+        Contact Us
+      </button>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="relative h-screen">
       <div class="absolute inset-0 z-0">
         <img
           src="https://lipsum.app/id/39/1600x900"
-          alt="Colorful balloons"
-          class="w-full h-full object-cover opacity-50"
+          alt="Jellyfish in deep blue water"
+          class="w-full h-full object-cover"
         />
+        <div class="absolute inset-0 bg-background opacity-30"></div>
       </div>
 
-      <!-- Content Container -->
-      <div class="relative z-10 h-full flex flex-col justify-between p-8">
-        <!-- Header -->
-        <header class="flex justify-between items-center">
-          <div class="text-2xl font-bold">M</div>
-          <button
-            class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm"
-          >
-            Contact Us
-          </button>
-        </header>
-
-        <!-- Main Content -->
-        <main class="flex flex-col items-start max-w-2xl">
-          <h1 class="text-4xl font-bold mb-4">Be Tomorrow's Creator 🚀</h1>
-          <h2 class="text-3xl font-semibold mb-4">
-            Expanding Perspectives<br />Community
+      <!-- Hero Content -->
+      <div class="relative z-10 h-full flex items-center px-8">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl font-bold mb-4">Design and localization</h1>
+          <h2 class="text-3xl font-semibold mb-6">
+            Your Gateway to Japan's Digital Landscape
           </h2>
-          <p class="text-sm mb-6">
-            ARISE is an event community specializing in<br />
-            spatial computing, rooted in creative orientation<br />
-            and exploratory thinking. We prototype the future,<br />
-            expanding the possibilities of spatial computing.<br />
-            Welcome to the grand stage where unteachable<br />
-            creativity and collective intelligence gather.
+          <p class="text-lg mb-8">
+            We're a dynamic duo fusing cutting-edge web design with expert
+            English to Japanese localization. Elevate your digital presence and
+            connect with the Japanese market seamlessly.
           </p>
           <button
-            class="bg-yellow-400 text-black px-6 py-3 rounded-full text-sm mb-4"
+            class="bg-primary text-secondary px-6 py-3 rounded-full text-sm hover:bg-opacity-80 transition-colors"
           >
-            Learn More About Our Community
+            Learn More About Our Services
           </button>
-        </main>
-
-        <!-- ARISE Logo -->
-        <div class="absolute right-0 bottom-0 p-8">
-          <h1 class="text-9xl font-bold tracking-tighter">ARISE</h1>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Additional Content Section -->
+    <section class="py-16 px-8">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold mb-8">
+          We transform companies through design innovation
+        </h3>
+        <!-- Add more content here as needed -->
+      </div>
+    </section>
   </body>
 </html>
