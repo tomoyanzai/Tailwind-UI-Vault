@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DD.NYC Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "dd-orange": "#FF5733",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-black font-sans">
+    <header class="bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold">DD.NYC</div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="hover:text-dd-orange">Work</a>
+          <a href="#" class="hover:text-dd-orange">Agency</a>
+          <div class="relative group">
+            <a href="#" class="hover:text-dd-orange">Services ▾</a>
+            <div
+              class="absolute hidden group-hover:block bg-white shadow-md py-2 mt-1"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Service 1</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Service 2</a
+              >
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" class="hover:text-dd-orange">Industries ▾</a>
+            <div
+              class="absolute hidden group-hover:block bg-white shadow-md py-2 mt-1"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Industry 1</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Industry 2</a
+              >
+            </div>
+          </div>
+          <a href="#" class="hover:text-dd-orange">Instagram</a>
+          <a href="#" class="hover:text-dd-orange">Dribbble</a>
+          <a href="#" class="hover:text-dd-orange">Behance</a>
+        </nav>
+        <button
+          class="bg-dd-orange text-white px-4 py-2 rounded hover:bg-opacity-90 transition"
+        >
+          Contact
+        </button>
+      </div>
+    </header>
+
+    <header class="p-6">
+      <nav class="flex justify-between items-center">
+        <div class="text-2xl font-bold">rnoi</div>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:underline">WORK</a></li>
+          <li><a href="#" class="hover:underline">ABOUT</a></li>
+          <li><a href="#" class="hover:underline">CAPABILITIES</a></li>
+          <li><a href="#" class="hover:underline">REVOLVE</a></li>
+          <li><a href="#" class="hover:underline">RETRN</a></li>
+          <li><a href="#" class="hover:underline">RYDE</a></li>
+        </ul>
+        <button
+          class="border border-black px-4 py-2 hover:bg-black hover:text-white transition"
+        >
+          CONTACT
+          <span class="ml-2">→</span>
+        </button>
+      </nav>
+    </header>
+
+    <script>
+      document
+        .getElementById("newProjectBtn")
+        .addEventListener("click", function () {
+          alert("Starting a new project!");
+          // Here you would typically open a form or navigate to a new project page
+        });
+    </script>
+  </body>
+</html>
