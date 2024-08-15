@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegant Asymmetric Project Showcase Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+      }
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .project-categories {
+        font-size: 0.875rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div id="project-grid" class="container mx-auto px-4 py-12">
+      <!-- Projects will be dynamically inserted here -->
+    </div>
+
+    <script>
+      const projects = [
+        {
+          title: "Prive — Powering Subscriptions For Everyone.",
+          categories: ["Branding & Identity", "Websites & Digital Platforms"],
+          image: "/api/placeholder/600/600",
+          color: "bg-purple-600",
+        },
+        {
+          title: "ENF — The Power Of Decentralization.",
+          categories: [
+            "Branding & Identity",
+            "Websites & Digital Platforms",
+            "Web3 Experience Design",
+          ],
+          image: "/api/placeholder/600/600",
+          color: "bg-blue-900",
+        },
+        {
+          title: "Highline — Revolutionizing The World Of Credit.",
+          categories: [
+            "Branding & Identity",
+            "Websites & Digital Platforms",
+            "Digital Product Design",
+          ],
+          image: "/api/placeholder/600/600",
+        },
+        {
+          title: "TakeUp — Adaptive Hotel Pricing Platform.",
+          categories: ["Branding & Identity", "Websites & Digital Platforms"],
+          color: "bg-yellow-400",
+        },
+        {
+          title: "Cloud Apartments — The Future Of Apartments.",
+          categories: ["Branding & Identity", "Websites & Digital Platforms"],
+          image: "/api/placeholder/600/600",
+        },
+      ];
+
+      function createProjectCard(project, index) {
+        const isRightColumn = index % 2 !== 0;
+        const marginTop = isRightColumn ? "md:mt-20" : "";
+
+        return `
+                <div class="mb-12 overflow-hidden transition-all duration-300 ease-in-out hover:opacity-80 ${marginTop}">
+                    <div class="relative ${
+                      project.color || "bg-gray-200"
+                    }" style="height: 400px;">
+                        ${
+                          project.image
+                            ? `<img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">`
+                            : ""
+                        }
+                    </div>
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-categories">${project.categories.join(
+                      ", "
+                    )}</p>
+                </div>
+            `;
+      }
+
+      function renderProjects() {
+        const projectGrid = document.getElementById("project-grid");
+        projectGrid.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    ${projects.map(createProjectCard).join("")}
+                </div>
+            `;
+      }
+
+      document.addEventListener("DOMContentLoaded", renderProjects);
+    </script>
+  </body>
+</html>
